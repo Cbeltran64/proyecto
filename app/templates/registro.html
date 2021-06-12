@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Registro</h1>
+
+<form style="margin-left: 43.5%" action="" method="post">
+    {{ form.hidden_tag() }}
+    <p style="color: black;">
+        {{ form.tipo_identificacion.label }}<br>
+        <span style="color: black;">{{ form.tipo_identificacion(size=32) }}</span><br>
+        {% for error in form.tipo_identificacion.errors %}
+        <span style="color: red; width: 10px;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.numero_identificacion.label }}<br>
+        <span style="color: black;">{{ form.numero_identificacion(size=32) }}</span><br>
+        {% for error in form.numero_identificacion.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.nombre.label }}<br>
+        <span style="color: black;">{{ form.nombre(size=32) }}</span><br>
+        {% for error in form.nombre.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.edad.label }}<br>
+        <span style="color: black;">{{ form.edad(size=32) }}</span><br>
+        {% for error in form.edad.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.celular.label }}<br>
+        <span style="color: black;">{{ form.celular(size=32) }}</span><br>
+        {% for error in form.celular.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.direccion.label }}<br>
+        <span style="color: black;">{{ form.direccion(size=32) }}</span><br>
+        {% for error in form.direccion.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.ciudad.label }}<br>
+        <span style="color: black;">{{ form.ciudad(size=32) }}</span><br>
+        {% for error in form.ciudad.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.pais.label }}<br>
+        <span style="color: black;">{{ form.pais(size=32) }}</span><br>
+        {% for error in form.pais.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <div>
+        <input type="submit" value="Registrar">
+    </div>
+</form>
+<form style="margin-left: 55%; margin-top: -20px" action="http://localhost:5000/">
+    <input type="submit" value="Inicio" />
+</form>
+
+{% endblock %}

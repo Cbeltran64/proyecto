@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Usuarios</h1>
+
+<div>
+    <div>
+        <form action="http://localhost:5000/registro">
+            <input type="submit" style="margin-left: 70px;" value="Nuevo Registro" />
+        </form>
+        <br>
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                <tr>
+                    <th>Tipo Identificacion</th>
+                    <th>Numero Identificacion</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Celular</th>
+                    <th>Direccion</th>
+                    <th>Ciudad</th>
+                    <th>Pais</th>
+                    <th>Accion</th>
+                </tr>
+                </thead>
+                {% for registro in registros %}
+                <tbody>
+                <tr>
+
+                        <td>{{ registro.tipo_identificacion }}</td>
+                        <td>{{ registro.numero_identificacion }}</td>
+                        <td>{{ registro.nombre }}</td>
+                        <td>{{ registro.edad }}</td>
+                        <td>{{ registro.celular }}</td>
+                        <td>{{ registro.direccion }}</td>
+                        <td>{{ registro.ciudad }}</td>
+                        <td>{{ registro.pais }}</td>
+                        <td><a style="text-decoration: none;" href="{{ url_for('eliminar', id=registro.id) }}">eliminar</a></td>
+                </tr>
+                <tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+{% if next_url %}
+    <a class="btn small-btn mauve white-h black-t box-shadow" style = "margin-top:10px;" href="{{ next_url }}">Older</a>
+{% endif %}
+{% if prev_url %}
+    <a class="btn small-btn mauve white-h black-t box-shadow" style = "margin-top:10px; align-content: center" href="{{ prev_url }}">Newer</a>
+{% endif %}
+
+{% endblock %}

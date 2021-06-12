@@ -1,0 +1,31 @@
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+__pycache__
+.pytest_cache
+
+# Installer logs
+pip-log.txt
+
+venv
+.env
+app.db
+app/static/files/images/mushrooms/tmp/**
+!**/.gitkeep
+test.txt
